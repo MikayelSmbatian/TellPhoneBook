@@ -1,0 +1,15 @@
+ProvideYourUsername= Provide your username:
+ProvideYourPassword= Provide your password:
+UserAlreadyExists = user already exists. Try again.
+GoodBye = Good Bye. :)
+ProvideAnyNumber= Provide any number:
+ProvideUserToSendFriendRequest= Provide user to send friend request :
+UserIsNotFound= User is not found.
+ChangesHasSaved= Changes has saved.
+YouHaveSuccessfullySignedIn=You have successfully signed in.
+SignedInHANDLE=>> add tel number \n >> add friend \n << show tel numbers \n << sign out
+Mistakes3=3 mistakes.
+IncorrectPassword=incorrect password.
+HELP=Sign up: Creates a new account \nSign in: if you already have an account provides you your account's information \n EXIT: closes the program
+SignedInHELP=ADD TEL NUMBER: adds a new \"number\" to your contacts list.\n ADD FRIEND: the provided user can reach your contacts list.\n SHOW TEL NUMBERS: shows you your contacts list.\n SIGN OUT: Exits your account.
+HANDLE= >>Sign in \n >>Sign up \n >>Exit
