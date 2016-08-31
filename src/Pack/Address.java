@@ -77,6 +77,45 @@ public class Address
         System.out.println(prop.get("ChangesHasSaved"));
         System.out.println(prop.get("GoodBye"));
     }
+    static void ShowFriendsList(User us)
+    {
+        if(us.getFriendsList().isEmpty())
+        {
+            System.out.println(prop.getProperty("YouHaveNoFriends") + "\n");
+            return;
+        }
+        System.out.println(prop.getProperty("YourFriendsListYouCanSeeBelow") + us.getFriendsList());
+        System.out.println(prop.getProperty("FriendLISTMenu"));
+        String command = scan.nextLine();
+        handleFriendPageCommand(command,us);
+    }
+    static void handleFriendPageCommand(String command, User us)
+    {
+        command = command.toUpperCase();
+        switch (command)
+        {
+            case "BACK":
+            {
+                return;
+            }
+            case "DELETE FRIEND":
+            {
+                System.out.print(prop.getProperty("WriteUsernameToDelete"));
+                String selectedUsername = scan.nextLine();
+                try
+                {
+                    us.deleteFriend(selectedUsername);
+                }
+                catch (UserNotFoundException e)
+                {
+                    System.out.println("User " + selectedUsername + " is not found in your friends list");
+                    System.out.println(prop.getProperty("Friend LIST Menu"));
+                    command = scan.nextLine();
+                    handleFriendPageCommand(command,us);
+                }
+            }
+        }
+    }
     static void handleSignedInCommand(String command, User us) throws Exception
     {
         command = command.toUpperCase();
@@ -101,6 +140,11 @@ public class Address
             {
                 signOut(us);
                 throw new Exception();
+            }
+            case "FRIENDS":
+            {
+                ShowFriendsList(us);
+                break;
             }
             default:
             {

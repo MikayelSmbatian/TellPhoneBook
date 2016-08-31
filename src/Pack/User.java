@@ -71,6 +71,7 @@ class User implements UserRepozitory
         res += getFriendsTelNumbers();
         return res;
     }
+
     public void addTelNumber(String number)
     {
         this.contactsList.add(number);
@@ -174,6 +175,14 @@ class User implements UserRepozitory
     public void friendRequest(User friend)
     {
         friend.friends.add(this.username);
+    }
+    public void deleteFriend(String selectedUsername) throws UserNotFoundException
+    {
+       // User us = new User();
+        //us = us.getUserFromDB(selectedUsername);
+        boolean isDeleted = this.friends.remove(selectedUsername);
+        if(!isDeleted)
+            throw new UserNotFoundException();
     }
 
     @Override
